@@ -1,5 +1,4 @@
 # Jenkins-OKD-CICD-Pipline
-# Containers-and-setup-orchestration
 <h2>Description</h2>
 In this project we will deploy a multi-tier application using a kubernetes cluster, deploy to OKD, and create a Jenkins CICD Pipline integrated with Gitlab and monitored with Nagios 
 <p align="center">
