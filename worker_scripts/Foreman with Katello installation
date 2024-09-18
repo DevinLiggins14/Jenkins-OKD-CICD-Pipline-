@@ -1,0 +1,23 @@
+Clear any metadata:
+
+# dnf clean all
+
+Install the foreman-release.rpm package:
+
+# dnf install https://yum.theforeman.org/releases/3.4/el8/x86_64/foreman-release.rpm
+
+Install the katello-repos-latest.rpm package
+
+# dnf install https://yum.theforeman.org/katello/4.6/katello/el8/x86_64/katello-repos-latest.rpm
+
+Install the puppet7-release-el-8.noarch.rpm package:
+
+# dnf install https://yum.puppet.com/puppet7-release-el-8.noarch.rpm
+
+Enable powertools repository:
+
+# dnf config-manager --set-enabled powertools
+
+Enable the DNF modules:
+
+# dnf module enable katello:el8 pulpcore:el8
