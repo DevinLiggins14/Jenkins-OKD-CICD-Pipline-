@@ -1,0 +1,21 @@
+#Import the Microsoft repository key.
+
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+
+#For RHEL 8, add packages-microsoft-com-prod repository:
+
+
+sudo dnf install -y https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm
+
+
+#Install with dnf install command 
+
+
+sudo dnf install azure-cli
+
+#Confirm installation
+
+az version
+
+
