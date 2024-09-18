@@ -1,0 +1,8 @@
+# Create a resource group for the AKS cluster
+az group create --name myResourceGroup --location eastus
+
+# Create the AKS cluster (adjust parameters as needed)
+az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 3 --enable-addons monitoring --generate-ssh-keys
+
+# Get credentials to access the AKS cluster
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
