@@ -64,27 +64,50 @@ In this project we will deploy a multi-tier application using a kubernetes clust
  <br/> Make sure to connect to DockerHub by running docker login <br/> 
  <br/> Now tag and push the images to your DockerHub repository 
  <img src="https://github.com/user-attachments/assets/4b8f074c-ff64-44a9-a0b2-41fb3a00fa21"/>
- <br/>
-<img src=""/>
+ <br/> Next create Kubernetes manifest and deployments <br/>
+<img src="https://github.com/user-attachments/assets/fc199cfe-c191-413f-829d-d7c6553930e6"/>
+ <img src="https://github.com/user-attachments/assets/7774c8cc-d2a6-430e-bf20-39eb60c895ba"/>
 <br />
-<br /> <br/> 
- <br/>
- <img src=""/>
+<br />  Now apply the manifest to the OKD Cluster <br/> 
+ <img src="https://github.com/user-attachments/assets/b49b9345-0e24-43e7-aa6a-31494967354d"/>
+ <br/> Confirm <br/>
+ <img src="https://github.com/user-attachments/assets/abe082ef-a460-41be-9771-341b330345e9"/>
+ <br/> Now lets make sure to set up ingress to expose the front end service<br/>
+ <img src="https://github.com/user-attachments/assets/a868c117-9e8c-4cad-b8d8-6659b2c61721"/>
+ <img src="https://github.com/user-attachments/assets/1542f177-3b03-454c-a77d-cb61246b5e53"/>
 <br/><br /> <br/>
- <br/>
-<img src=""/>
+  Lets confirm connectivity to make sure our app can work and is accessible <br/>
+<img src="https://github.com/user-attachments/assets/df6de183-ceb0-4690-ad32-0eea171decd4"/>
+ <img src="https://github.com/user-attachments/assets/a63cb3af-d558-411c-839c-1de90c81ebea"/>
+ <br/> To keep track of logs you can also run oc get events <br/>
+ <img src="https://github.com/user-attachments/assets/391f7813-dbee-424c-8c77-3648e12db63e"/>
 <br />
-<br /> <br/> 
+<br /> Next lets install Jenkins within our OKD cluster <br/> 
  <br/>
+ <img src="https://github.com/user-attachments/assets/518b46c9-66a0-4d34-8cfc-f83f21c87893"/>
+<br/> Now confirm <br /> 
+ <img src="https://github.com/user-attachments/assets/7eb79b14-45ed-411a-a255-839e7978e69f"/>
+ <br/>
+ <br/>
+ <br/> Now access the Jenkins UI in your browser <br/>
+<img src="https://github.com/user-attachments/assets/100bddfe-3486-493c-ad78-4ef75e1142fb"/>
+<br /> Navigate to plugins<br/>
+ <img src="https://github.com/user-attachments/assets/53e6d9d5-20cc-4956-9fb5-088c1ddfc05f"/>
+<br /> Search for Gitlab plugin and install<br/>
+ <img src="https://github.com/user-attachments/assets/3cdb3f60-960e-43a4-95fe-5c00af68e32b"/>
+ <img src="https://github.com/user-attachments/assets/fd5b8450-deef-47b5-8b23-98e5002d0d86"/>
+ <img src="https://github.com/user-attachments/assets/0999d766-3cb0-4c3a-a7bd-a70369609c6c"/>
+ <br/> Integrate Jenkins with Gitlab via link address, access tokens, etc... <br/>
+ <img src="https://github.com/user-attachments/assets/aab15088-e599-4c31-a3f6-f79e12ebda95"/>
+ <img src="https://github.com/user-attachments/assets/7247d0fe-2418-4d86-872d-f3d0ec9b0057"/>
+ <img src="https://github.com/user-attachments/assets/9c3a162c-02f4-4fab-9240-15392c5433de"/>
+<br/
+ ><br /> Now lets test the deployment of docker images <br/>
+ <img src="https://github.com/user-attachments/assets/6c9f3b19-00f0-409a-b83e-257419af1124"/>
+<br/> Verify pipline and webhook connections to ensure integration <br/>
+ <img src="https://github.com/user-attachments/assets/6fc9c79a-da00-4ba6-a7e0-4f22ccd59893"/>
+ <br/> <br/>
  <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
  <br/>
 <img src=""/>
 <br />
