@@ -1,0 +1,14 @@
+# Use the official Nginx image from Docker Hub
+FROM nginx:latest
+
+# Copy custom configuration file, if you have one
+# COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Optionally, copy website content to the container
+# COPY html /usr/share/nginx/html
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
