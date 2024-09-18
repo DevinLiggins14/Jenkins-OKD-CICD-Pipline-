@@ -106,12 +106,20 @@ In this project we will deploy a multi-tier application using a kubernetes clust
  <img src="https://github.com/user-attachments/assets/6c9f3b19-00f0-409a-b83e-257419af1124"/>
 <br/> Verify pipline and webhook connections to ensure integration <br/>
  <img src="https://github.com/user-attachments/assets/6fc9c79a-da00-4ba6-a7e0-4f22ccd59893"/>
- <br/> <br/>
+ <img src="https://github.com/user-attachments/assets/bbf6f521-63b8-4b17-a84e-59721eb1849f"/>
+ <br/> With the webhook configurations changes made both ways will be updated <br/>
  <img src=""/>
- <br/>
-<img src=""/>
+ <img src="https://github.com/user-attachments/assets/7e8b17a5-3707-41a8-8cc5-326cec570b2e"/>
+ <br/> Note: its important to check all file format, OKD VM health, and the configurations made to prevent error<br/>
+ <br/>For example the OKD with Jenkins crashing and needing to reboot (only one node)<br/>
+ <img src="https://github.com/user-attachments/assets/54ad857b-c73f-4d71-b676-4d693820cc04"/>
+ <br/> Example Jenkins file errors <br/>
+<img src="https://github.com/user-attachments/assets/0ad3f812-9a31-4bdf-b556-eeddcc58f691"/>
 <br />
-<br /> <br/> 
+ Generate an API token from the OKD cluster for Jenkins to access
+<br /> 
+ <img src="https://github.com/user-attachments/assets/38637a71-a718-4b29-ae7b-a22ec253ed09"/>
+ <br/> 
  <br/>
  <img src=""/>
 <br/><br /> <br/>
