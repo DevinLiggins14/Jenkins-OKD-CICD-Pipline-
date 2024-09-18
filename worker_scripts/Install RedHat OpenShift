@@ -1,3 +1,13 @@
+#Client 
 curl -LO "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz"
 tar -xvf openshift-client-linux.tar.gz
 sudo mv oc /usr/local/bin/
+
+#Server 
+curl -LO "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz"
+tar -xvf openshift-install-linux.tar.gz
+sudo mv openshift-install /usr/local/bin/
+
+#Run once completed 
+openshift-install version
+openshift-install create install-config
