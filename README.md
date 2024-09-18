@@ -15,9 +15,13 @@ In this project we will deploy a multi-tier application using a kubernetes clust
 
 <h2>Project walk-through:</h2>
 <p align="center">
- : <br/>
-<img src=""/>
-<br /> <br /> <br />  
+ To begin add the required repositories for Foreman and Katello. Then install their dependencies  <br/>
+<img src="https://github.com/user-attachments/assets/3c575f3e-b049-4253-b426-c32414c364cd"/>
+ <img src="https://github.com/user-attachments/assets/1dcbe05e-ad71-42ba-b0a6-e898739b276c"/>
+<br /> Next run the foreman installer <br/>
+ <img src="https://github.com/user-attachments/assets/6897d7f4-1be5-4049-bc6f-c751fc62f3a2"/>
+ <br /> 
+ <br />  
 <br />
    <br/>  <br/> 
 <img src=""/>
