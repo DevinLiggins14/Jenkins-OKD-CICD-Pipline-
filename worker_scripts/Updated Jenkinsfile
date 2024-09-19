@@ -1,0 +1,65 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE = "dlliggins/multi-tier-webapp" // Docker image name
+        DOCKER_TAG = "latest" // Image tag
+        KUBE_CONFIG = "/path/to/kubeconfig" // Path to kubeconfig file for accessing the cluster
+        KUBE_NAMESPACE = "default" // Kubernetes namespace
+        DEPLOYMENT_NAME = "my-app-deployment" // Kubernetes deployment name
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                // Checkout your source code
+                git 'https://github.com/your-repo/your-app.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build Docker image
+                    sh 'docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .'
+                }
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    // Log in to Docker Hub
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        sh 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
+                    }
+                    // Push Docker image to Docker Hub
+                    sh 'docker push ${DOCKER_IMAGE}:${DOCKER_TAG}'
+                }
+            }
+        }
+
+        stage('Update Kubernetes Deployment') {
+            steps {
+                script {
+                    // Set the kubeconfig file for accessing the cluster
+                    sh "export KUBECONFIG=${KUBE_CONFIG}"
+                    
+                    // Update the Kubernetes deployment with the new Docker image
+                    sh """
+                    kubectl set image deployment/${DEPLOYMENT_NAME} ${DEPLOYMENT_NAME}=${DOCKER_IMAGE}:${DOCKER_TAG} --namespace=${KUBE_NAMESPACE}
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'This is my pipeline working! The pipeline completed successfully.'
+        }
+        failure {
+            echo 'Pipeline failed. Please check the logs for details.'
+        }
+    }
+}
