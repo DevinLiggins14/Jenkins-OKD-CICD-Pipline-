@@ -1,0 +1,28 @@
+sudo yum groupinstall "development tools" 
+sudo yum install httpd php php-cli gcc unzip wget glibc glibc-common gd gd-devel net-snmp 
+sudo useradd nagios 
+sudo groupadd nagcmd 
+sudo usermod -a -G nagcmd nagios 
+sudo usermod -a -G nagcmd apache 
+wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.10.tar.gz 
+tar -xzf nagios-4.4.10.tar.gz 
+cd nagios-4.4.10 
+./configure --with-command-group=nagios 
+make all 
+sudo make install 
+sudo make install-commandmode 
+sudo make install-init 
+sudo make install-config 
+sudo make install-webconf 
+wget http://nagios-plugins.org/download/nagios-plugins-2.4.3.tar.gz 
+sudo tar -xzf nagios-plugins-2.4.3.tar.gz 
+cd nagios-plugins-2.4.3 
+./configure --with-nagios-user=nagios --with-nagios-group=nagcmd 
+sudo make 
+sudo make install 
+sudo vi /usr/local/nagios/etc/nagios.cfg 
+sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin 
+/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg 
+sudo systemctl enable nagios 
+sudo systemctl start nagios 
+sudo systemctl start httpd 
