@@ -115,14 +115,20 @@ In this project we will deploy a multi-tier application using a kubernetes clust
  <img src="https://github.com/user-attachments/assets/54ad857b-c73f-4d71-b676-4d693820cc04"/>
  <br/> Example Jenkins file errors <br/>
 <img src="https://github.com/user-attachments/assets/0ad3f812-9a31-4bdf-b556-eeddcc58f691"/>
+ <img src="https://github.com/user-attachments/assets/04308827-9a6c-4f55-ab9f-0506c489230a"/>
 <br />
- Generate an API token from the OKD cluster for Jenkins to access
+ Generate an API token from the OKD cluster for Jenkins to access by running oc whoami --show-token
 <br /> 
- <img src="https://github.com/user-attachments/assets/38637a71-a718-4b29-ae7b-a22ec253ed09"/>
+ <br/> To troubleshoot deployment retrace steps <br/>
+ <img src="https://github.com/user-attachments/assets/82dcc59c-e363-4929-81a4-695411e4bd84"/>
  <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
+ <br/> With a successful CICD pipline after testing confirm by checking OKD cluster as well as the DockerHub repository <br/>
+ <img src="https://github.com/user-attachments/assets/2bd4b97a-bc30-4ca8-b2cf-27344bbc42ab"/>
+ <img src="https://github.com/user-attachments/assets/f32de844-046f-4a90-ac6d-c29e2d1766c9"/>
+ <br/> Changes to the web app can be made through the pipline pushed and viewed <br/>
+ <igm src="https://github.com/user-attachments/assets/99675839-1c5d-4fef-824b-716a733942d8"/>
+<br/><br /> 
+  <br/>
  <br/>
 <img src=""/>
 <br />
