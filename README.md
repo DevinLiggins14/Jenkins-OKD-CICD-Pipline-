@@ -31,7 +31,7 @@ In this project we will deploy a multi-tier application using a kubernetes clust
 <br /> Once configuration is complete check the services <br/>
  <br/>
 <img src="https://github.com/user-attachments/assets/83f466ef-e828-4a32-8a7c-834eaf5eaab2"/>
-<br /> Now log view webserver ui by either hostname or ip addr specified <br/>
+<br /> Now log view webserver ui by either system hostname or ip address to access the satellite server UI <br/>
 <h2> Kubernetes AKS multi-tier application </h2>
  <br /> Connect to Microsoft Azure from the command line ensure the az-cli package has been installed <br/>
  <img src="https://github.com/user-attachments/assets/4b20ed43-f3ca-406f-aa89-2ebc93fcbd08"/>
@@ -82,6 +82,7 @@ In this project we will deploy a multi-tier application using a kubernetes clust
  <br/> To keep track of logs you can also run oc get events <br/>
  <img src="https://github.com/user-attachments/assets/391f7813-dbee-424c-8c77-3648e12db63e"/>
 <br />
+ <h2> Jenkins CICD integration </h2>
 <br /> Next lets install Jenkins within our OKD cluster <br/> 
  <br/>
  <img src="https://github.com/user-attachments/assets/518b46c9-66a0-4d34-8cfc-f83f21c87893"/>
@@ -126,139 +127,41 @@ In this project we will deploy a multi-tier application using a kubernetes clust
  <img src="https://github.com/user-attachments/assets/2bd4b97a-bc30-4ca8-b2cf-27344bbc42ab"/>
  <img src="https://github.com/user-attachments/assets/f32de844-046f-4a90-ac6d-c29e2d1766c9"/>
  <br/> Changes to the web app can be made through the pipline pushed and viewed <br/>
- <igm src="https://github.com/user-attachments/assets/99675839-1c5d-4fef-824b-716a733942d8"/>
+ <img src="https://github.com/user-attachments/assets/99675839-1c5d-4fef-824b-716a733942d8"/>
 <br/><br /> 
-  <br/>
+ <h2> Nagios installation and configuration </h2>
+  <br/> Install all essential packages and dependencies. Also create and add user nagios
  <br/>
-<img src=""/>
+<img src="https://github.com/user-attachments/assets/97ef1862-3c7b-44ec-a420-41091ba1a58b"/>
 <br />
-<br /> <br/> 
+<br /> Next cd in the nagios directory and compile nagios core <br/> 
  <br/>
- <img src=""/>
-<br/><br /> <br/>
+ <img src="https://github.com/user-attachments/assets/5e90e23f-a233-4210-a3d5-2ff7e59d8742"/>
+ <br/> Confirm completion <br/>
+ <img src="https://github.com/user-attachments/assets/a4392d2d-f296-4338-8f37-6e9120cd477f"/>
+<br/><br />
+ Now install the nagios core by running: 
+ sudo make install 
+ make install-commandmode 
+ make install-init 
+ make install-config 
+ make install-webconf 
  <br/>
-<img src=""/>
+ <br/>
+ <br/> Repeat the process for nagios plugins <br/>
+<img src="https://github.com/user-attachments/assets/1311b650-717c-475b-b580-30fb8d954bba"/>
 <br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
+<br /> Now edit the  /usr/local/nagios/etc/nagios.cfg file<br/> 
+ <br/> <br/> Verify the following parameters exist  <br/>
+ <img src="https://github.com/user-attachments/assets/edee870c-ceda-46dc-9257-6efce4fde85c"/>
+<br/><br /> Now set the admin password and confirm file configurations <br/>
+ <img src="https://github.com/user-attachments/assets/7fceddc9-13c0-4591-915c-75344b19cc22"/>
+ <br/> Now start the nagios service and httpd <br/>
+<img src="https://github.com/user-attachments/assets/140ef151-da86-40f9-ae83-6686fda34f6f"/>
 <br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/><br /> <br/>
- <br/>
-<img src=""/>
-<br />
-<br /> <br/> 
- <br/>
- <img src=""/>
-<br/>
+<br /> Access the Nagios ui by searching https://ipadrr/nagios and sign in with designated password for adminuser  <br/> 
+ <img src="https://github.com/user-attachments/assets/c136408e-5f0c-4d6a-9687-2a89d4c36c83"/>
+ <br/> <br/> Navigate to services to monitor hosts machines desired services <br/>
+ <img src="https://github.com/user-attachments/assets/440db02b-b52e-4893-a011-6f6010fb4af3"/>
+ <br/> Success! <br/>
+<br/><br />Note: make changes to the /usr/local/nagios/etc/nagios.cfg to add services and when to configure alerts to view. <br/>
