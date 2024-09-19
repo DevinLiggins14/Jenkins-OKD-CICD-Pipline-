@@ -1,12 +1,12 @@
 # Jenkins-OKD-CICD-Pipline
 <h2>Description</h2>
-In this project we will deploy a multi-tier application using a kubernetes cluster, deploy to OKD, and create a Jenkins CICD Pipline integrated with Gitlab and monitored with Nagios 
+In this project we will build a RedHat satellite server, deploy a multi-tier application using a kubernetes cluster, deploy to OKD, and create a Jenkins CICD Pipline integrated with Gitlab, and monitor systems with Nagios. 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/6daaecae-75f4-40b4-ac1e-4ee0d789d18c"/>
 
 <h2>Languages and Utilities Used</h2>
 
-
+Bash, yml, groovy
 
 <h2>Environments Used </h2>
 
